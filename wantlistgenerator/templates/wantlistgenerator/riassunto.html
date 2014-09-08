@@ -1,0 +1,17 @@
+<h1>Utenti (e rispettivi libri)</h1>
+
+{% if utenti %}
+    <ul>
+    {% for utente in utenti %}
+       <li> {{utente}}
+	       <ul>
+	       {% for libro in utente.libro_set.all %}
+	            <li>{{libro}}</li>
+	       {% endfor %}
+	       </ul>
+       </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Non ci sono utenti.</p>
+{% endif %}
